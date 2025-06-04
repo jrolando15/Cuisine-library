@@ -13,14 +13,14 @@ const SimilarRecipes = ({ recipeId }) => {
 
   useEffect(() => {
     if (isOpen && similarRecipes.length === 0 && !loading && !error) {
-      fetchSimilarRecipes();
+      GetSimilarRecipes();
     }
     if (isOpen && modalBodyRef.current) {
       modalBodyRef.current.scrollTop = 0; // Reset scroll to top on open
     }
   }, [isOpen, similarRecipes, loading, error, recipeId]);
 
-  const fetchSimilarRecipes = async () => {
+  const GetSimilarRecipes = async () => {
     setLoading(true);
     setError(null);
     try {
