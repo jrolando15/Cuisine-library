@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, useDisclosure, Button, Spinner, VStack, Text } from '@chakra-ui/react';
 import { getSimilarRecipes } from '../../services/apiService';
 import { useNavigate } from 'react-router-dom';
@@ -11,16 +11,7 @@ const SimilarRecipes = ({ recipeId }) => {
   const navigate = useNavigate();
   const modalBodyRef = useRef(null);
 
-  useEffect(() => {
-    if (isOpen && similarRecipes.length === 0 && !loading && !error) {
-      GetSimilarRecipes();
-    }
-    if (isOpen && modalBodyRef.current) {
-      modalBodyRef.current.scrollTop = 0; // Reset scroll to top on open
-    }
-  }, [isOpen, similarRecipes, loading, error, recipeId]);
-
-  const GetSimilarRecipes = async () => {
+  const fetchSimilarRecipes = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
@@ -31,7 +22,16 @@ const SimilarRecipes = ({ recipeId }) => {
     } finally {
       setLoading(false);
     }
-  };
+  }, [recipeId]);
+
+  useEffect(() => {
+    if (isOpen && similarRecipes.length === 0 && !loading && !error) {
+      fetchSimilarRecipes();
+    }
+    if (isOpen && modalBodyRef.current) {
+      modalBodyRef.current.scrollTop = 0; // Reset scroll to top on open
+    }
+  }, [isOpen, similarRecipes, loading, error, fetchSimilarRecipes]);
 
   const handleRecipeClick = (id) => {
     navigate(`/recipe-details/${id}`);
