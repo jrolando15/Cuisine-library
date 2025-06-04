@@ -1,0 +1,30 @@
+/* Style for the header */
+header {
+    text-align: center; /* Center the text */
+    text-justify: inter-word; /* Justify the text */
+    padding: 20px; /* Add padding around the header */
+    background-color: #f8f9fa; /* Light gray background (Bootstrap-like) */
+    border-bottom: 2px solid #6c9e4f; /* Green border at the bottom */
+  }
+  
+  /* Style for the main heading */
+  header h1 {
+    font-size: 2.5rem; /* Large font size for the heading */
+    color: #6c9e4f; /* Green text color */
+    margin-bottom: 15px; /* Add spacing below the heading */
+    transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover effect for the heading */
+  header h1:hover {
+    color: #dbcdb5; /* Change text color to cream on hover */
+  }
+  
+  /* Style for the paragraph */
+  header p {
+    font-size: 1.2rem; /* Slightly larger font size for readability */
+    color: #333; /* Dark gray text color */
+    line-height: 1.6; /* Increase line height for better readability */
+    margin: 0 auto; /* Center the paragraph */
+    max-width: 800px; /* Limit the width of the paragraph */
+  }

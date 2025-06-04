@@ -1,38 +1,51 @@
+/* General styles for the app */
 .App {
-  text-align: center;
+  font-family: 'Arial', sans-serif; /* Keep clean font */
+  background-image: url('./Recipe book.jpg');
+  background-size: cover; /* Ensure the image covers the entire viewport */
+  background-position: center center; /* Center the image both horizontally and vertically */
+  background-attachment: fixed; /* Fix the background while scrolling */
+  min-height: 100vh; /* Ensure the app covers the full viewport height */
+  height: 100%; /* Ensure the container stretches to fit content */
+  width: 100vw; /* Ensure the app spans the full viewport width */
+  margin: 0; /* Remove any default margins */
+  padding: 0; /* Remove any default padding */
+  position: relative; /* Ensure positioning context for children */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Ensure the root HTML and body elements allow full height and set background */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('./Recipe book.jpg'); /* Ensure body has the same background */
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Main content styles */
+main {
+  padding: 10px; /* Reduced padding for closer alignment to header */
+  flex: 1;
+  background-color: transparent; /* Transparent to show the background image */
+  overflow: auto;
+  display: flex; /* Use flex to center children */
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align to top instead of center */
+  /* Ensure main fills the remaining height after nav */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Center the home-container content */
+.home-container {
+  margin-top: 0; /* Remove extra margin */
+  padding: 10px; /* Further reduce padding */
+  max-width: 600px; /* Limit the width of the container */
+  width: 100%; /* Ensure responsiveness */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styles for home-description */
+.home-description {
+  margin-top: 0; /* Remove extra margin */
 }

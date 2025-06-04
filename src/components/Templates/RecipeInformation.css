@@ -1,0 +1,6 @@
+/* Ensure RecipeInformation content starts below the fixed header */
+.recipe-information-container {
+  margin-top: 80px; /* Offset to avoid overlap with the fixed header */
+  padding: 20px; /* Add padding for spacing */
+}
+

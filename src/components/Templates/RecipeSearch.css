@@ -1,0 +1,9 @@
+/* Main container for the page */
+.recipe-search-container {
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
